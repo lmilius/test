@@ -5,7 +5,9 @@ node {
 	}
 
 	stage('Build image') {
-		app = docker.build("lmilius/helloworld-node:1")
+		docker.withServer('tcp://ci.admin.milius.lab:2376') {
+			app = docker.build("helloworld-node:1")
+		}
 	}
 	
 	stage('Test image') {
