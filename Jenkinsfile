@@ -1,6 +1,7 @@
 node {
 	dir('jenkins-test') {
-        	git url: 'git@bitbucket.org:lmilius/jenkins-test.git'
+        	git url: 'git@bitbucket.org:lmilius/jenkins-test.git',
+		credentialsId: 'lmilius'
     	}
 	def app
 	stage('Clone repository') {
