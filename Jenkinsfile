@@ -1,4 +1,7 @@
 node {
+	dir('jenkins-test') {
+        	git url: 'git@bitbucket.org:lmilius/jenkins-test.git'
+    	}
 	def app
 	stage('Clone repository') {
 		checkout scm
@@ -12,6 +15,10 @@ node {
 		app.inside {
 			sh 'echo "Tests passed"'
 		}
+	}
+	
+	stage('Call second repo hello world') {
+		sh 'jenkins-test/hello-jenkins-test.sh'
 	}
 
 //	stage('Push image') {
