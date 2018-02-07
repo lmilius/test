@@ -1,7 +1,7 @@
 node {
 	dir('jenkins-test') {
         	git url: 'git@bitbucket.org:lmilius/jenkins-test.git',
-		credentialsId: 'lmilius'
+		credentialsId: 'bitbucket-ssh-key'
     	}
 	def app
 	stage('Clone repository') {
