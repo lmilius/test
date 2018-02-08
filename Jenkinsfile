@@ -19,7 +19,7 @@ node {
 	}
 	
 	stage('Call second repo hello world') {
-		sh 'jenkins-test/hello-jenkins-test.sh'
+		sh '${WORKSPACE}/jenkins-test/hello-jenkins-test.sh'
 	}
 
 //	stage('Push image') {
